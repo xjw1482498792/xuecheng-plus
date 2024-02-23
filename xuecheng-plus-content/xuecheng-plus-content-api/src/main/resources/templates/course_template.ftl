@@ -637,5 +637,5 @@
     <!--底部版权-->
 </div>
 <script>var courseId = "${model.courseBase.id}";var courseCharge = "${model.courseBase.charge}"</script>
-<!--#include virtual="/include/course_detail_dynamic.html"-->
+<!--#include virtual="/include/course_detail_dynamic.html"old-->
 </body>

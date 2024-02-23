@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author itcast
@@ -48,6 +48,7 @@ public class XcChooseCourse implements Serializable {
     /**
      * 选课类型
      */
+
     private String orderType;
 
     /**

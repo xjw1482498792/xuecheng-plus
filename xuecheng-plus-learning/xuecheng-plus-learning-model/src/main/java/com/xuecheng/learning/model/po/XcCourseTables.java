@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author itcast
@@ -49,6 +49,7 @@ public class XcCourseTables implements Serializable {
     /**
      * 课程名称
      */
+    @TableField(exist = false)
     private String courseType;
 
 

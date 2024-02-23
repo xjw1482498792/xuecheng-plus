@@ -31,7 +31,7 @@ public class CoursePublishController {
     CoursePublishService coursePublishService;
 
 
-    @ApiOperation("获取课程发布信息")
+/*    @ApiOperation("获取课程发布信息")
     @ResponseBody
     @GetMapping("/course/whole/{courseId}")
     public CoursePreviewDto getCoursePublish(@PathVariable("courseId") Long courseId) {
@@ -39,7 +39,9 @@ public class CoursePublishController {
         CoursePreviewDto coursePreviewDto = new CoursePreviewDto();
 
         //查询课程发布表
-        CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
+//        CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
+        //先从缓存查询，缓存中有直接返回，没有再查询数据库
+        CoursePublish coursePublish = coursePublishService.getCoursePublishCache(courseId);
         if(coursePublish == null){
             return coursePreviewDto;
         }
@@ -54,7 +56,7 @@ public class CoursePublishController {
         coursePreviewDto.setTeachplans(teachplanDtos);
         return coursePreviewDto;
 
-    }
+    }*/
 
 
     @GetMapping("/coursepreview/{courseId}")

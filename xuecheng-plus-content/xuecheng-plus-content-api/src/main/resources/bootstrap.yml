@@ -10,10 +10,10 @@ spring:
     nacos:
       server-addr: 192.168.101.65:8848
       discovery: #服务注册相关配置
-        namespace: dev402
+        namespace: dev
         group: xuecheng-plus-project
       config: #配置文件相关配置
-        namespace: dev402
+        namespace: dev
         group: xuecheng-plus-project
         file-extension: yaml
         refresh-enabled: true
@@ -34,6 +34,9 @@ spring:
           - data-id: feign-${spring.profiles.active}.yaml
             group: xuecheng-plus-common
             refresh: true  #profiles默认为dev
+          - data-id: redis-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
 
 
 #  datasource:
@@ -44,6 +47,9 @@ spring:
 
   profiles:
     active: dev   #环境名
+  freemarker:
+    settings:
+      classic_compatible: true
 
 #logging:
 #  config: classpath:log4j2-dev.xml  # 日志文件配置路径
@@ -55,3 +61,6 @@ spring:
 #  base-package: com.xuecheng.content
 #  enabled: true
 #  version: 1.0.0
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
